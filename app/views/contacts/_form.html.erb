@@ -1,0 +1,16 @@
+<% if @contact.errors.any? %>
+  <p>something went wrong:</p>
+  <ul>
+    <% @contact.errors.full_messages.each do |contact| %>
+      <li><%= contact %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @contact do |f| %>
+  <%= f.label "Contact Name" %><br>
+  <%= f.text_field :name %><br>
+  <%= f.label "Contact Number" %><br>
+  <%= f.text_field :number %><br>
+  <%= f.submit :class => 'btn btn-success' %><br>
+<% end %>
