@@ -1,4 +1,8 @@
 class MessagesController < ApplicationController
+  def index
+    @messages = Message.all
+  end
+
   def new
     @messages = Message.new
   end
@@ -6,13 +10,16 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(message_params)
     if @message.save
-      flash{:notice} = "Your message was sent!"
-      redirect_to new_message_path
+      flash[:notice] = "Your message was sent!"
+      redirect_to messages_path
     else
       render 'new'
     end
   end
 
+  def show
+    @message = Message.find(params[:id])
+  end
 
 private
 
