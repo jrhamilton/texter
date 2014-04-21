@@ -4,7 +4,7 @@ class MessagesController < ApplicationController
   end
 
   def new
-    @messages = Message.new
+    @message = Message.new
   end
 
   def create
