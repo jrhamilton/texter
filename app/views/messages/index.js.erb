@@ -1,14 +1,10 @@
 $(document).ready(function() {
   $('#ajax_messages_link').click(function() {
-    $('#ajax_messages_link').hide()
     $("#content").html('<%= j render("messages") %>')
-    $('#messages_toggle').show()
   });
 
   $('#ajax_contacts_link').click(function() {
-    $('#ajax_contacts_link').hide()
     $("#content").html('<%= j render("contacts") %>')
-    $('#contacts_toggle').show()
   });
 });
 

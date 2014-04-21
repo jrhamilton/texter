@@ -4,22 +4,20 @@
 <div class="navbar navbar-default">
     <div class="float_left">
       <div class='col-md-3 center'>
-        <h1><%= link_to "New message", new_message_path %></h1>
+        <h1><%= link_to "New message", new_message_path, id: 'new_message_link', remote: true %></h1>
       </div>
       <div class='col-md-3 center'>
-        <h1><%= link_to "New Contact", new_contact_path %></h1>
+        <h1><%= link_to "New Contact", new_contact_path, id: 'new_contact_link', remote: true %></h1>
       </div>
       <div class='col-md-3 center messages'>
         <h1><%= link_to "Messages", messages_path, id: "ajax_messages_link", remote: true %></h1>
-        <h2><%= link_to "Hide Messages", messages_path, id: "messages_toggle" %></h2>
       </div>
       <div class='col-md-3 center'>
         <h1><%= link_to "Contacts", messages_path, id: "ajax_contacts_link", remote: true %></h1>
-        <h2><%= link_to "Hide Contacts", messages_path, id: "contacts_toggle" %></h2>
       </div>
     </div>
 
 </div>
 
-<div id="content">
+<div id="content" class="center">
 </div>
