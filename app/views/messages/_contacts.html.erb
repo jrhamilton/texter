@@ -1,0 +1,5 @@
+<div id="ajax_contacts">
+  <% Contact.all.each do |contact| %>
+    <li><%= contact.name %>: <%= contact.number %></li>
+  <% end %>
+</div>

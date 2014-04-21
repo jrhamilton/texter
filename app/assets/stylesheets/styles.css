@@ -1,0 +1,20 @@
+#messages_toggle {
+  display:none;
+}
+
+#contacts_toggle {
+  display:none;
+}
+
+.float_right {
+  float: right;
+}
+
+.center {
+  text-align:center;
+}
+
+.w30 {
+  width:30%;
+  margin-left:1%;
+}

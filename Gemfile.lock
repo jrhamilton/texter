@@ -27,6 +27,10 @@ GEM
       tzinfo (~> 0.3.37)
     addressable (2.3.6)
     arel (4.0.2)
+    bootstrap-sass (3.1.1.0)
+      sass (~> 3.2)
+    bootstrap-sass-extras (0.0.5)
+      rails (>= 3.1.0)
     builder (3.1.4)
     coderay (1.1.0)
     coffee-rails (4.0.1)
@@ -150,6 +154,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-sass
+  bootstrap-sass-extras
   coffee-rails (~> 4.0.0)
   dotenv-rails
   jbuilder (~> 1.2)

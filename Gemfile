@@ -28,6 +28,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 gem 'rest-client'
+gem 'bootstrap-sass'
+gem 'bootstrap-sass-extras'
 
 group :test, :development do
   gem 'dotenv-rails'
