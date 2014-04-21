@@ -31,6 +31,7 @@ gem 'rest-client'
 
 group :test, :development do
   gem 'dotenv-rails'
+  gem 'rspec-rails'
 end
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
