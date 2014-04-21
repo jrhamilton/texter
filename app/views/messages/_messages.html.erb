@@ -1,5 +1,5 @@
 <div id="ajax_messages">
   <% Message.all.each do |message| %>
-    <li><%= message.body %></li>
+    <li>To: <%= message.contact.name %>, Message: <%= message.body %></li>
   <% end %>
 </div>

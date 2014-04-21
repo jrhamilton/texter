@@ -8,8 +8,10 @@ class MessagesController < ApplicationController
   end
 
   def create
+    @contact = Contact.find_by(:number => message_params[:to])
     @message = Message.new(message_params)
     if @message.save
+      @message.update(:contact_id => @contact.id)
       flash[:notice] = "Your message was sent!"
       redirect_to messages_path
     else
@@ -24,7 +26,7 @@ class MessagesController < ApplicationController
 private
 
   def message_params
-    params.require(:message).permit(:to, :from, :body)
+    params.require(:message).permit(:to, :from, :body, :contact_id)
   end
 
 end

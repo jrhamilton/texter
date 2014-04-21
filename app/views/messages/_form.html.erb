@@ -8,8 +8,9 @@
 <% end %>
 
 <%= form_for @message do |f| %>
-  <%= f.label :to %><br>
-  <%= f.text_field :to %><br>
+  <%= f.label "To" %><br>
+  <%= f.collection_select :to, Contact.all, :number, :name %>
+ <br>
   <%= f.label :from %><br>
   <%= f.text_field :from %><br>
   <%= f.label :body %><br>

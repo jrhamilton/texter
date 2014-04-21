@@ -1,5 +1,6 @@
 class Message < ActiveRecord::Base
   before_create :send_sms
+  belongs_to :contact
 
 private
   def send_sms
