@@ -1,0 +1,8 @@
+
+development:
+  adapter: postgresql
+  database: texter_development
+
+test:
+  adapter: postgresql
+  database: texter_test
