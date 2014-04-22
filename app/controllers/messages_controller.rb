@@ -8,15 +8,33 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @contact = Contact.find_by(:number => message_params[:to])
-    @message = Message.new(message_params)
-    if @message.save
-      @message.update(:contact_id => @contact.id)
-      flash[:notice] = "Your message was sent!"
+    numbers = params[:message][:to]
+    i = 0
+    numbers.each do |number|
+      if number != ""
+        contact = Contact.find_by(:number => number)
+        message = Message.new(message_params)
+        message[:to] = contact.number
+        message[:contact_id] = contact.id
+        if message.save
+          i += 1
+        end
+      end
+    end
+    if i == numbers.length - 1
+      flash[:notice] = "Your messages has been sent"
       redirect_to messages_path
     else
       render 'new'
     end
+
+    # if @message.save
+    #   @message.update(:contact_id => @contact.id)
+    #   flash[:notice] = "Your message was sent!"
+    #   redirect_to messages_path
+    # else
+    #   render 'new'
+    # end
   end
 
   def show
