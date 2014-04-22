@@ -27,14 +27,6 @@ class MessagesController < ApplicationController
     else
       render 'new'
     end
-
-    # if @message.save
-    #   @message.update(:contact_id => @contact.id)
-    #   flash[:notice] = "Your message was sent!"
-    #   redirect_to messages_path
-    # else
-    #   render 'new'
-    # end
   end
 
   def show
