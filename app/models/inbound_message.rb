@@ -1,8 +1,10 @@
-class InboundMessage < ActiveRecord::Base
-  before_create :send_sms
-  belongs_to :contact
+class InboundMessage
 
-private
+  def initialize(from)
+    @from = from
+    send_sms
+  end
+
   def send_sms
     begin
       response = RestClient::Request.new(
@@ -12,7 +14,7 @@ private
         :password => ENV['TWILIO_AUTH_TOKEN'],
         :payload => { :Body => 'Sorry, No Incoming Messages. You can not respond.',
                       :From => '6095342260',
-                      :To => From}
+                      :To => @from}
       ).execute
     rescue RestClient::BadRequest => error
       message = JSON.parse(error.response)['message']
