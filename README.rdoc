@@ -1,28 +1,13 @@
-== README
+    Texter is a texting app that users use Twillio to send text messages to their friends.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+    As a user, I can send a text message to a phone number, so that I can send texts from the web.
 
-Things you may want to cover:
+    As a user, I can save contacts to an address book, so that it's easy to text them again without re-typing their phone number.
 
-* Ruby version
+    As a user, I can send a message to more than one person at once, so that I can mass text my friends.
 
-* System dependencies
+    As a user who receives a text message, if I text back, I can get an automated response telling me that the phone number can't receive texts, so that I don't get sad when the sender doesn't reply.
 
-* Configuration
+    Use localtunnel.me to see application in action so that Twillio can use a "tunnel" to reach your computer. 
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+    On your Twilio numbers page, choose your phone number, then change the messaging request URL to your localtunnel address followed by an endpoint that Twilio can POST to when it receives a test, e.g. http://j384.localtunnel.me/inbound_messages.
